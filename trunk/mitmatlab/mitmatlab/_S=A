@@ -1,0 +1,146 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+ <HEAD>
+  <TITLE>Index of /afs/sipb/user/arolfe/matlab</TITLE>
+ </HEAD>
+ <BODY>
+<H1>Index of /afs/sipb/user/arolfe/matlab</H1>
+<PRE><IMG SRC="/icons/blank.gif" ALT="     "> <A HREF="?N=A">Name</A>                    <A HREF="?M=A">Last modified</A>       <A HREF="?S=D">Size</A>  <A HREF="?D=A">Description</A>
+<HR>
+<IMG SRC="/icons/back.gif" ALT="[DIR]"> <A HREF="/afs/sipb/user/arolfe/">Parent Directory</A>        07-Jan-2005 09:15      -  
+<IMG SRC="/icons/folder.gif" ALT="[DIR]"> <A HREF="Other/">Other/</A>                  06-Jun-2002 16:45      -  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="find_classes.m">find_classes.m</A>          19-Mar-2001 08:13     1k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="make_a_draw.m">make_a_draw.m</A>           13-Feb-2001 22:34     1k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="plot_process.m">plot_process.m</A>          18-Jan-2001 13:22     1k  
+<IMG SRC="/icons/text.gif" ALT="[TXT]"> <A HREF="Feature_selection.txt">Feature_selection.txt</A>   20-Jan-2002 18:27     1k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="None.m">None.m</A>                  07-Jan-2001 11:51     1k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="loglikelihood.m">loglikelihood.m</A>         26-Jan-2000 15:54     1k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="Discriminability.m">Discriminability.m</A>      10-Jan-2002 12:34     1k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="Bhattacharyya.m">Bhattacharyya.m</A>         27-Dec-2001 09:56     1k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="voronoi_regions.m">voronoi_regions.m</A>       26-Jan-2000 16:14     1k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="calculate_error.m">calculate_error.m</A>       24-Dec-2001 16:34     1k  
+<IMG SRC="/icons/text.gif" ALT="[TXT]"> <A HREF="Preprocessing.txt">Preprocessing.txt</A>       21-Mar-2002 10:01     1k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="FishersLinearDiscriminant.m">FishersLinearDiscrim..&gt;</A> 18-Feb-2002 10:11     1k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="CARTfunctions.m">CARTfunctions.m</A>         09-Feb-2002 22:54     1k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="plot_scatter.m">plot_scatter.m</A>          22-Feb-2001 12:24     1k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="ML.m">ML.m</A>                    14-Feb-2002 23:00     1k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="Chernoff.m">Chernoff.m</A>              27-Dec-2001 10:15     1k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="PCA.m">PCA.m</A>                   18-Feb-2002 10:00     1k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="calculate_region.m">calculate_region.m</A>      22-Feb-2001 13:06     1k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="Nearest_Neighbor.m">Nearest_Neighbor.m</A>      07-Jan-2001 11:46     1k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="Minimum_Cost.m">Minimum_Cost.m</A>          18-Feb-2002 09:40     1k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="ML_diag.m">ML_diag.m</A>               14-Feb-2002 23:00     1k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="read_algorithms.m">read_algorithms.m</A>       10-Jan-2002 17:42     1k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="LS.m">LS.m</A>                    15-Apr-2001 12:47     1k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="Perceptron_VIM.m">Perceptron_VIM.m</A>        21-Mar-2002 09:54     1k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="HDR.m">HDR.m</A>                   26-Dec-2001 09:26     1k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="Parzen.m">Parzen.m</A>                18-Feb-2002 11:00     1k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="Perceptron_BVI.m">Perceptron_BVI.m</A>        21-Mar-2002 09:56     1k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="Perceptron_Batch.m">Perceptron_Batch.m</A>      21-Mar-2002 09:49     1k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="Balanced_Winnow.m">Balanced_Winnow.m</A>       21-Mar-2002 09:38     1k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="RBF_Network.m">RBF_Network.m</A>           15-Jan-2002 13:59     1k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="Koller.m">Koller.m</A>                26-Dec-2001 22:19     1k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="LMS.m">LMS.m</A>                   21-Mar-2002 09:42     1k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="chess.mat">chess.mat</A>               14-Feb-2002 22:59     1k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="Relaxation_SSM.m">Relaxation_SSM.m</A>        21-Mar-2002 09:59     1k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="Perceptron_FM.m">Perceptron_FM.m</A>         21-Mar-2002 09:50     2k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="NearestNeighborEditing.m">NearestNeighborEditi..&gt;</A> 21-Feb-2002 08:33     2k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="Relaxation_BM.m">Relaxation_BM.m</A>         21-Mar-2002 09:59     2k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="PNN.m">PNN.m</A>                   18-Feb-2002 11:20     2k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="RDA.m">RDA.m</A>                   14-Feb-2002 23:00     2k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="Perceptron.m">Perceptron.m</A>            18-Feb-2002 11:43     2k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="RCE.m">RCE.m</A>                   18-Feb-2002 11:35     2k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="feature_selection.mat">feature_selection.mat</A>   25-Dec-2001 23:33     2k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="Marginalization.m">Marginalization.m</A>       10-Jan-2002 17:31     2k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="predict_performance.m">predict_performance.m</A>   23-Jan-2002 12:05     2k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="fuzzy_k_means.m">fuzzy_k_means.m</A>         24-Dec-2001 09:19     2k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="k_means.m">k_means.m</A>               17-Mar-2002 11:35     2k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="feature_selection_commands.m">feature_selection_co..&gt;</A> 25-Dec-2001 23:35     2k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="decision_region.m">decision_region.m</A>       24-Mar-2002 09:41     2k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="Projection_Pursuit.m">Projection_Pursuit.m</A>    15-Jan-2002 23:25     2k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="ICA.m">ICA.m</A>                   21-Mar-2002 09:46     2k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="Ho_Kashyap.m">Ho_Kashyap.m</A>            20-Mar-2002 22:43     2k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="GaussianParameters.mat">GaussianParameters.mat</A>  10-Jan-2002 12:38     2k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="classification_error.m">classification_error.m</A>  26-Dec-2000 22:16     2k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="enter_distributions.mat">enter_distributions.mat</A> 22-Nov-1999 15:15     2k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="Infomat.m">Infomat.m</A>               26-Dec-2001 22:19     2k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="Discrete_Bayes.m">Discrete_Bayes.m</A>        20-Feb-2002 11:53     2k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="LocBoostFunctions.m">LocBoostFunctions.m</A>     11-Dec-2001 13:36     2k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="Local_Polynomial.m">Local_Polynomial.m</A>      18-Feb-2002 12:34     2k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="NDDF.m">NDDF.m</A>                  29-Dec-2001 23:14     2k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="Ada_Boost.m">Ada_Boost.m</A>             25-Jun-2002 09:28     2k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="Stumps.m">Stumps.m</A>                07-Feb-2002 22:43     2k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="LVQ1.m">LVQ1.m</A>                  24-Dec-2001 09:18     2k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="Store_Grabbag.m">Store_Grabbag.m</A>         16-Jan-2002 11:48     2k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="high_histogram.m">high_histogram.m</A>        10-Feb-2002 13:26     2k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="Components_with_DF.m">Components_with_DF.m</A>    24-Feb-2002 13:17     2k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="SOHC.m">SOHC.m</A>                  24-Dec-2001 12:12     2k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="Kohonen_SOFM.m">Kohonen_SOFM.m</A>          21-Mar-2002 09:41     3k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="MDS.m">MDS.m</A>                   20-Mar-2002 22:43     3k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="generate_data_set.m">generate_data_set.m</A>     14-Feb-2002 22:59     3k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="Leader_Follower.m">Leader_Follower.m</A>       21-Mar-2002 09:48     3k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="Pocket.m">Pocket.m</A>                18-Feb-2002 12:13     3k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="LVQ3.m">LVQ3.m</A>                  24-Dec-2001 09:17     3k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="Deterministic_SA.m">Deterministic_SA.m</A>      21-Mar-2002 09:47     3k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="load_file.m">load_file.m</A>             08-May-2002 11:14     3k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="Interactive_Learning.m">Interactive_Learning.m</A>  21-Mar-2002 09:43     3k  
+<IMG SRC="/icons/text.gif" ALT="[TXT]"> <A HREF="Classification.txt">Classification.txt</A>      22-Jul-2002 13:37     3k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="Competitive_learning.m">Competitive_learning.m</A>  21-Mar-2002 09:36     3k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="process_params.m">process_params.m</A>        20-Mar-2002 22:43     3k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="ML_II.m">ML_II.m</A>                 24-Mar-2002 08:39     3k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="Multivariate_Splines.m">Multivariate_Splines.m</A>  21-Mar-2002 09:57     3k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="click_points.m">click_points.m</A>          14-Feb-2002 22:59     3k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="FindParameters.mat">FindParameters.mat</A>      10-Mar-2002 16:50     3k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="DSLVQ.m">DSLVQ.m</A>                 18-Feb-2002 13:27     3k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="Components_without_DF.m">Components_without_DF.m</A> 24-Feb-2002 13:09     3k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="Backpropagation_Stochastic.m">Backpropagation_Stoc..&gt;</A> 21-Mar-2002 09:33     3k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="ADDC.m">ADDC.m</A>                  18-Feb-2002 13:25     3k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="Genetic_Algorithm.m">Genetic_Algorithm.m</A>     18-Apr-2002 13:57     3k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="Deterministic_annealing.m">Deterministic_anneal..&gt;</A> 21-Mar-2002 09:41     3k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="Gibbs.m">Gibbs.m</A>                 14-Feb-2002 23:00     3k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="Backpropagation_SM.m">Backpropagation_SM.m</A>    21-Mar-2002 09:33     3k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="Bayesian_Model_Comparison.m">Bayesian_Model_Compa..&gt;</A> 24-Mar-2002 11:32     3k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="Backpropagation_Batch.m">Backpropagation_Batch.m</A> 21-Mar-2002 09:29     3k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="BIMSEC.m">BIMSEC.m</A>                21-Mar-2002 09:37     3k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="Optimal_Brain_Surgeon.m">Optimal_Brain_Surgeon.m</A> 21-Mar-2002 09:54     3k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="Stochastic_SA.m">Stochastic_SA.m</A>         21-Mar-2002 10:00     3k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="NLPCA.m">NLPCA.m</A>                 21-Mar-2002 09:53     4k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="Genetic_Culling.m">Genetic_Culling.m</A>       20-Mar-2002 22:43     4k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="min_spanning_tree.m">min_spanning_tree.m</A>     20-Mar-2002 22:43     4k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="CART.m">CART.m</A>                  20-Mar-2002 22:43     4k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="feature_selection.m">feature_selection.m</A>     04-Apr-2002 12:13     4k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="AGHC.m">AGHC.m</A>                  20-Mar-2002 22:43     4k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="classifier.mat">classifier.mat</A>          09-Mar-2002 23:59     4k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="Voted_Perceptron.m">Voted_Perceptron.m</A>      20-Mar-2002 22:43     4k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="ID3.m">ID3.m</A>                   21-Mar-2002 09:45     4k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="Deterministic_Boltzmann.m">Deterministic_Boltzm..&gt;</A> 20-Mar-2002 22:43     4k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="multialgorithms.mat">multialgorithms.mat</A>     19-May-2002 22:22     5k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="Backpropagation_Recurrent.m">Backpropagation_Recu..&gt;</A> 21-Mar-2002 09:34     5k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="EM.m">EM.m</A>                    24-Mar-2002 09:30     5k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="Backpropagation_CGD.m">Backpropagation_CGD.m</A>   21-Mar-2002 09:34     5k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="Cascade_Correlation.m">Cascade_Correlation.m</A>   21-Mar-2002 09:39     5k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="SVM.m">SVM.m</A>                   11-Jul-2002 21:15     5k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="enter_distributions_commands.m">enter_distributions_..&gt;</A> 14-Feb-2002 23:00     6k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="C4_5.m">C4_5.m</A>                  30-Jun-2002 00:02     6k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="FindParametersFunctions.m">FindParametersFuncti..&gt;</A> 10-Mar-2002 11:22     6k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="Backpropagation_Quickprop.m">Backpropagation_Quic..&gt;</A> 21-Mar-2002 09:31     6k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="multialgorithms.m">multialgorithms.m</A>       19-May-2002 22:22     6k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="enter_distributions.m">enter_distributions.m</A>   04-Apr-2002 12:15     7k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="start_classify.m">start_classify.m</A>        19-May-2002 11:22     7k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="GaussianParameters.m">GaussianParameters.m</A>    04-Apr-2002 12:13     7k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="Genetic_Programming.m">Genetic_Programming.m</A>   21-Mar-2002 09:44     8k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="LocBoost.m">LocBoost.m</A>              20-Mar-2002 22:43     9k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="contents.m">contents.m</A>              20-May-2002 08:30     9k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="multialgorithms_commands.m">multialgorithms_comm..&gt;</A> 20-May-2002 08:21    10k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="seperable.mat">seperable.mat</A>           03-Jan-2000 14:01    17k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="classifier.m">classifier.m</A>            19-May-2002 11:07    18k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="FindParameters.m">FindParameters.m</A>        04-Apr-2002 12:18    19k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="classifier_commands.m">classifier_commands.m</A>   21-May-2002 14:25    25k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="spiral.mat">spiral.mat</A>              25-Mar-2002 12:37    33k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="XOR.mat">XOR.mat</A>                 14-Feb-2002 23:00    34k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="clouds.mat">clouds.mat</A>              14-Feb-2002 22:59    84k  
+<IMG SRC="/icons/layout.gif" ALT="[   ]"> <A HREF="User%20guide.pdf">User guide.pdf</A>          20-May-2002 08:33   294k  
+<IMG SRC="/icons/image2.gif" ALT="[IMG]"> <A HREF="About.bmp">About.bmp</A>               20-May-2002 08:36   930k  
+</PRE><HR>
+<ADDRESS>MIT Web Server Apache/1.3.26 Mark/1.4 Server at www.mit.edu Port 80</ADDRESS>
+</BODY></HTML>
