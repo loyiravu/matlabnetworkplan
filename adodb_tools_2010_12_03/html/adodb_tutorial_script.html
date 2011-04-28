@@ -1,0 +1,416 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML is auto-generated from an M-file.
+To make changes, update the M-file and republish this document.
+      --><title>Tutorial for adodb_toolbox Package</title><meta name="generator" content="MATLAB 7.10"><meta name="date" content="2010-12-03"><meta name="m-file" content="adodb_tutorial_script"><style type="text/css">
+
+body {
+  background-color: white;
+  margin:10px;
+}
+
+h1 {
+  color: #990000; 
+  font-size: x-large;
+}
+
+h2 {
+  color: #990000;
+  font-size: medium;
+}
+
+/* Make the text shrink to fit narrow windows, but not stretch too far in 
+wide windows. */ 
+p,h1,h2,div.content div {
+  max-width: 600px;
+  /* Hack for IE6 */
+  width: auto !important; width: 600px;
+}
+
+pre.codeinput {
+  background: #EEEEEE;
+  padding: 10px;
+}
+@media print {
+  pre.codeinput {word-wrap:break-word; width:100%;}
+} 
+
+span.keyword {color: #0000FF}
+span.comment {color: #228B22}
+span.string {color: #A020F0}
+span.untermstring {color: #B20000}
+span.syscmd {color: #B28C00}
+
+pre.codeoutput {
+  color: #666666;
+  padding: 10px;
+}
+
+pre.error {
+  color: red;
+}
+
+p.footer {
+  text-align: right;
+  font-size: xx-small;
+  font-weight: lighter;
+  font-style: italic;
+  color: gray;
+}
+
+  </style></head><body><div class="content"><h1>Tutorial for adodb_toolbox Package</h1><!--introduction--><p><b>By Jarek Tuszynski</b></p><p>Package adodb_toolbox allows communication with different types of databases through Microsoft's  ADO (ActiveX Data Objects) OLEDB component. The package was designed to work on Microsoft SQL Server, Oracle, Microsoft Access, MySQL, other databases.</p><p>This package can connect to dozen different database types, perform wide range of different query types and convert results to MATLAB Struct data structures as well as regular cell tables. Matlab struct output uses similar format as used by xml_io_tools and csv2struct libraries. Reading and writing BLOB objects is supported.</p><p>This package can be studied, modified, customized, rewritten and used in other packages without any limitations. All code is included and documented. Software is distributed under BSD Licence (included).</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">Credit</a></li><li><a href="#2">Change History</a></li><li><a href="#3">Licence</a></li><li><a href="#4">Access: Open connection to MS Access file</a></li><li><a href="#5">Access: Read single record from DB</a></li><li><a href="#6">Access: Read multiple records from DB</a></li><li><a href="#7">Access: Struct output provides more intuitive interface</a></li><li><a href="#8">Access: Delete record and verify that number of records decresed</a></li><li><a href="#9">Access: Insert record and verify that number of records incresed</a></li><li><a href="#10">Access: Struct output default column labels</a></li><li><a href="#11">Access: Close DB connection</a></li><li><a href="#12">MS SQL: Initialize MS SQL database</a></li><li><a href="#13">MS SQL: Create TEMP table</a></li><li><a href="#14">MS SQL: Insert two new records</a></li><li><a href="#15">MS SQL: Update one of the records to add a blob</a></li><li><a href="#16">MS SQL: Read a blob from the database and store it to the hard disk</a></li><li><a href="#17">MS SQL: Run statement with multiple queries</a></li><li><a href="#18">MS SQL: Run statement with multiple queries with Pref.MultipleQuery = true flag</a></li><li><a href="#19">MS SQL: Run multi-query sql with an incorect second statement</a></li><li><a href="#20">MS SQL: Calling Microsoft SQL Server stored procedures</a></li><li><a href="#21">MS SQL: Delete table TEMP and close DB connection</a></li></ul></div><h2>Credit<a name="1"></a></h2><p>Parts of this code were based on or inspired by: * Tim Myers oledb*.m functions * Martin Furlan's adodb package * Joerg Buchholz's myblob package</p><h2>Change History<a name="2"></a></h2><div><ul><li>2010-12-03 - original version</li></ul></div><h2>Licence<a name="3"></a></h2><p>The package is distributed under BSD Licence</p><pre class="codeinput">format <span class="string">compact</span>; <span class="comment">% viewing preference</span>
+clear <span class="string">variables</span>;
+type(<span class="string">'BSD_Licence.txt'</span>)
+</pre><pre class="codeoutput">
+Copyright (c) 2007, Jaroslaw Tuszynski
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without 
+modification, are permitted provided that the following conditions are 
+met:
+
+    * Redistributions of source code must retain the above copyright 
+      notice, this list of conditions and the following disclaimer.
+    * Redistributions in binary form must reproduce the above copyright 
+      notice, this list of conditions and the following disclaimer in 
+      the documentation and/or other materials provided with the distribution
+      
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" 
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE 
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE 
+ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE 
+LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR 
+CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF 
+SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS 
+INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN 
+CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
+ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
+POSSIBILITY OF SUCH DAMAGE.
+</pre><h2>Access: Open connection to MS Access file<a name="4"></a></h2><p>See websites below for syntax of the connection strings   * <a href="http://www.connectionstrings.com/">&gt;  * &lt;http://www.codeproject.com/KB/database/connectionstrings.aspx</a></p><pre class="codeinput">DB = adodb_connect(<span class="string">'PROVIDER=Microsoft.Jet.OLEDB.4.0; Data Source=adotest.mdb;'</span>);
+</pre><h2>Access: Read single record from DB<a name="5"></a></h2><pre class="codeinput">record6 = adodb_query(DB, <span class="string">'select top 1 * from TestTable where office=6'</span>);
+disp(record6)
+</pre><pre class="codeoutput">      lastname: 'Simpson'
+     firstname: 'Maggie'
+    profession: 'Musician'
+        office: 6
+</pre><h2>Access: Read multiple records from DB<a name="6"></a></h2><pre class="codeinput">[Struct Table] = adodb_query(DB, <span class="string">'select * from TestTable'</span>);
+disp(<span class="string">'Output in in struct format:'</span>)
+disp(Struct)
+disp(<span class="string">''</span>)
+disp(<span class="string">'Output in in table format:'</span>)
+disp(Table)
+</pre><pre class="codeoutput">Output in in struct format:
+      lastname: {13x1 cell}
+     firstname: {13x1 cell}
+    profession: {13x1 cell}
+        office: {13x1 cell}
+Output in in table format:
+    'Smith'        'John'       'Minister'            [ 1]
+    'Myers'        'Tim'        'Programmer'          [ 2]
+    'Simpson'      'Bart'       'Skateboarder'        [ 3]
+    'Simpson'      'Homer'      'Nuclear Engineer'    [ 4]
+    'Simpson'      'Marge'      'Home Maker'          [ 5]
+    'Schmoe'       'Joe'        'Stock Broker'        [ 7]
+    'Appleseed'    'Johnny'     'Arborist'            [ 8]
+    'Boone'        'Daniel'     'Hunter'              [ 9]
+    'Lincoln'      'Abraham'    'President'           [10]
+    'John'         'DeLemon'    'Programmer'          [13]
+    'Peter'        'Stone'      'Preacher'            [12]
+    'Rogerio'      'Dias'       'Dottore animali'     [11]
+    'Simpson'      'Maggie'     'Musician'            [ 6]
+</pre><h2>Access: Struct output provides more intuitive interface<a name="7"></a></h2><pre class="codeinput"><span class="keyword">for</span> i = 1:length(Struct.lastname)
+  fprintf(<span class="string">'%s, %s, %s, %i\n'</span>, Struct.lastname{i}, Struct.firstname{i}, <span class="keyword">...</span>
+                              Struct.profession{i}, Struct.office{i});
+<span class="keyword">end</span>
+</pre><pre class="codeoutput">Smith, John, Minister, 1
+Myers, Tim, Programmer, 2
+Simpson, Bart, Skateboarder, 3
+Simpson, Homer, Nuclear Engineer, 4
+Simpson, Marge, Home Maker, 5
+Schmoe, Joe, Stock Broker, 7
+Appleseed, Johnny, Arborist, 8
+Boone, Daniel, Hunter, 9
+Lincoln, Abraham, President, 10
+John, DeLemon, Programmer, 13
+Peter, Stone, Preacher, 12
+Rogerio, Dias, Dottore animali, 11
+Simpson, Maggie, Musician, 6
+</pre><h2>Access: Delete record and verify that number of records decresed<a name="8"></a></h2><pre class="codeinput">before = adodb_query(DB, <span class="string">'select count(*) as num_rec from TestTable'</span>);
+adodb_query(DB, <span class="string">'delete from TestTable where office=6'</span>);
+after  = adodb_query(DB, <span class="string">'select count(*) as num_rec from TestTable'</span>);
+fprintf(<span class="string">'Number of records before deletion is %i, and after is %i\n'</span>, <span class="keyword">...</span>
+  before.num_rec, after.num_rec);
+</pre><pre class="codeoutput">Number of records before deletion is 13, and after is 12
+</pre><h2>Access: Insert record and verify that number of records incresed<a name="9"></a></h2><pre class="codeinput">sql = <span class="string">'INSERT INTO TestTable (LASTNAME, FIRSTNAME, PROFESSION, OFFICE) VALUES (''%s'', ''%s'', ''%s'', %i) '</span>;
+sql = sprintf(sql, record6.lastname,   record6.firstname, <span class="keyword">...</span>
+                   record6.profession, record6.office);
+adodb_query(DB, sql);
+after  = adodb_query(DB, <span class="string">'select count(*) as num_rec from TestTable'</span>);
+fprintf(<span class="string">'Number of records after insertion is %i\n'</span>, after.num_rec);
+</pre><pre class="codeoutput">Number of records after insertion is 13
+</pre><h2>Access: Struct output default column labels<a name="10"></a></h2><p>In case column labeld can not be deduced from select statement adodb_query will use A, B, C, ... convention, similat to Excel</p><pre class="codeinput">x = adodb_query(DB, <span class="string">'select count(*), max(office) from TestTable'</span>);
+disp(x)
+</pre><pre class="codeoutput">    A: 13
+    B: 13
+</pre><h2>Access: Close DB connection<a name="11"></a></h2><pre class="codeinput">DB.release;
+</pre><h2>MS SQL: Initialize MS SQL database<a name="12"></a></h2><pre class="codeinput">cn_str = <span class="string">'PROVIDER=SQLOLEDB; Data Source=10.100.10.10; initial catalog=my_database; User ID=my_username; password=my_password'</span>;
+DB = adodb_cn(cn_str, 240);
+</pre><h2>MS SQL: Create TEMP table<a name="13"></a></h2><pre class="codeinput">sql = [<span class="string">'CREATE TABLE TEMP ( '</span>,<span class="keyword">...</span>
+         <span class="string">'blob    varbinary(max), '</span>,<span class="keyword">...</span>
+         <span class="string">'name    varchar(64)'</span>,<span class="keyword">...</span>
+       <span class="string">');'</span>];
+adodb_query(DB, sql);
+</pre><h2>MS SQL: Insert two new records<a name="14"></a></h2><pre class="codeinput">adodb_query(DB, [<span class="string">'insert into TEMP (name) values (''football''); '</span>,<span class="keyword">...</span>
+                 <span class="string">'insert into TEMP (name) values (''baseball''); '</span>]);
+[~, Table] = adodb_query(DB, <span class="string">'select * from TEMP'</span>);
+disp(Table);
+</pre><pre class="codeoutput">    [NaN]    'football'
+    [NaN]    'baseball'
+</pre><h2>MS SQL: Update one of the records to add a blob<a name="15"></a></h2><pre class="codeinput">selectRecordSql = <span class="string">'SELECT TOP(1) * FROM TEMP WHERE name=''football'''</span>;
+fname = <span class="string">'football.jpg'</span>;
+imwrite(imread(fname),fname); <span class="comment">% copy file to current directry</span>
+adodb_update_blob(DB, selectRecordSql, <span class="string">'blob'</span>, fname);
+[~, Table] = adodb_query(DB, <span class="string">'select * from TEMP'</span>);
+disp(Table);
+</pre><pre class="codeoutput">    [1x13155 uint8]    'football'
+    [          NaN]    'baseball'
+</pre><h2>MS SQL: Read a blob from the database and store it to the hard disk<a name="16"></a></h2><pre class="codeinput">x = adodb_query(DB, selectRecordSql);
+fid = fopen(<span class="string">'MyFootball.jpg'</span>, <span class="string">'wb'</span>);
+fwrite(fid, x.blob, <span class="string">'uint8'</span>);     <span class="comment">% dump the raw binary to the hard disk</span>
+fclose(fid);
+I = imread(<span class="string">'MyFootball.jpg'</span>);     <span class="comment">% read it as an image</span>
+imshow(I);
+</pre><img vspace="5" hspace="5" src="adodb_tutorial_script_01.png" alt=""> <h2>MS SQL: Run statement with multiple queries<a name="17"></a></h2><pre class="codeinput">sql = <span class="string">'Select count(*) from TEMP;    select * from TEMP'</span>;
+[Struct Table] = adodb_query(DB, sql);
+disp(<span class="string">'Output in in struct format:'</span>)
+disp(Struct)
+disp(<span class="string">'Output in in table format:'</span>)
+disp(Table)
+</pre><pre class="codeoutput">Output in in struct format:
+    A: 2
+Output in in table format:
+    [2]
+</pre><h2>MS SQL: Run statement with multiple queries with Pref.MultipleQuery = true flag<a name="18"></a></h2><pre class="codeinput">Pref = []; Pref.MultipleQuery = true;
+[Struct Table] = adodb_query(DB, sql, Pref);
+disp(<span class="string">'Output of query 1 in struct format:'</span>)
+disp(Struct{1})
+disp(<span class="string">'Output of query 1 in table format:'</span>)
+disp(Table{1})
+disp(<span class="string">'Output of query 2 in struct format:'</span>)
+disp(Struct{2})
+disp(<span class="string">'Output of query 2 in table format:'</span>)
+disp(Table{2})
+</pre><pre class="codeoutput">Output of query 1 in struct format:
+    A: 2
+Output of query 1 in table format:
+    [2]
+Output of query 2 in struct format:
+    blob: {2x1 cell}
+    name: {2x1 cell}
+Output of query 2 in table format:
+    [1x13155 uint8]    'football'
+    [          NaN]    'baseball'
+</pre><h2>MS SQL: Run multi-query sql with an incorect second statement<a name="19"></a></h2><p>First correct statement did not modify database</p><pre class="codeinput">sql = [<span class="string">'Update TEMP set name=''basketball'' where name=''baseball''; '</span>,<span class="keyword">...</span>
+       <span class="string">'select WrongName from TEMP'</span>];
+<span class="keyword">try</span>
+  x = adodb_query(DB, sql);
+<span class="keyword">catch</span> ME
+  disp(ME.message);
+<span class="keyword">end</span>
+[~, TEMP] = adodb_query(DB, <span class="string">'select * from TEMP'</span>);
+disp(<span class="string">'Output in table format:'</span>)
+disp(TEMP)
+</pre><pre class="codeoutput">Invoke Error, Dispatch Exception: 
+Source: Microsoft OLE DB Provider for SQL Server
+Description: Invalid column name 'WrongName'.
+Output in table format:
+    [1x13155 uint8]    'football'
+    [          NaN]    'baseball'
+</pre><h2>MS SQL: Calling Microsoft SQL Server stored procedures<a name="20"></a></h2><p>Calling build in stored procedure xp_msver</p><pre class="codeinput">Struct = adodb_query(DB, <span class="string">'EXEC xp_msver'</span>);
+<span class="keyword">for</span> i = 1:11
+  fprintf(<span class="string">'%20s = %s\n'</span>, Struct.name{i}, Struct.character_value{i});
+<span class="keyword">end</span>
+</pre><pre class="codeoutput">         ProductName = Microsoft SQL Server
+      ProductVersion = 10.0.2531.0
+            Language = English (United States)
+            Platform = NT x64
+            Comments = SQL
+         CompanyName = Microsoft Corporation
+     FileDescription = SQL Server Windows NT - 64 Bit
+         FileVersion = 2007.0100.2531.00 ((Katmai_PCU_Main).090329-1004)
+        InternalName = SQLSERVR
+      LegalCopyright = Microsoft Corp. All rights reserved.
+     LegalTrademarks = Microsoft SQL Server is a registered trademark of Microsoft Corporation.
+</pre><h2>MS SQL: Delete table TEMP and close DB connection<a name="21"></a></h2><pre class="codeinput">adodb_query(DB, <span class="string">'DROP TABLE "TEMP"'</span>);
+DB.release;
+</pre><p class="footer"><br>
+      Published with MATLAB&reg; 7.10<br></p></div><!--
+##### SOURCE BEGIN #####
+%% Tutorial for adodb_toolbox Package
+% *By Jarek Tuszynski*
+%
+% Package adodb_toolbox allows communication with different types of 
+% databases through Microsoft's  ADO (ActiveX Data Objects) OLEDB component.
+% The package was designed to work on Microsoft SQL Server, Oracle, Microsoft 
+% Access, MySQL, other databases. 
+% 
+% This package can connect to dozen different database types, perform wide 
+% range of different query types and convert results to MATLAB Struct data  
+% structures as well as regular cell tables. Matlab struct output uses 
+% similar format as used by xml_io_tools and csv2struct libraries. Reading
+% and writing BLOB objects is supported.
+%
+% This package can be studied, modified, customized, rewritten and used in  
+% other packages without any limitations. All code is included and
+% documented. Software is distributed under BSD Licence (included).   
+%
+%% Credit
+% Parts of this code were based on or inspired by:
+% * Tim Myers oledb*.m functions
+% * Martin Furlan's adodb package
+% * Joerg Buchholz's myblob package
+%
+%% Change History
+% * 2010-12-03 - original version
+
+
+%% Licence
+% The package is distributed under BSD Licence
+format compact; % viewing preference
+clear variables;
+type('BSD_Licence.txt')
+
+%% Access: Open connection to MS Access file
+% See websites below for syntax of the connection strings
+%   * http://www.connectionstrings.com/ 
+%   * http://www.codeproject.com/KB/database/connectionstrings.aspx
+DB = adodb_connect('PROVIDER=Microsoft.Jet.OLEDB.4.0; Data Source=adotest.mdb;');
+
+%% Access: Read single record from DB
+record6 = adodb_query(DB, 'select top 1 * from TestTable where office=6');
+disp(record6)
+
+%% Access: Read multiple records from DB
+[Struct Table] = adodb_query(DB, 'select * from TestTable');
+disp('Output in in struct format:')
+disp(Struct)
+disp('')
+disp('Output in in table format:')
+disp(Table)
+
+%% Access: Struct output provides more intuitive interface
+for i = 1:length(Struct.lastname)
+  fprintf('%s, %s, %s, %i\n', Struct.lastname{i}, Struct.firstname{i}, ...
+                              Struct.profession{i}, Struct.office{i});
+end
+
+%% Access: Delete record and verify that number of records decresed
+before = adodb_query(DB, 'select count(*) as num_rec from TestTable');
+adodb_query(DB, 'delete from TestTable where office=6');
+after  = adodb_query(DB, 'select count(*) as num_rec from TestTable');
+fprintf('Number of records before deletion is %i, and after is %i\n', ...
+  before.num_rec, after.num_rec);
+
+%% Access: Insert record and verify that number of records incresed
+sql = 'INSERT INTO TestTable (LASTNAME, FIRSTNAME, PROFESSION, OFFICE) VALUES (''%s'', ''%s'', ''%s'', %i) ';
+sql = sprintf(sql, record6.lastname,   record6.firstname, ...
+                   record6.profession, record6.office);
+adodb_query(DB, sql);
+after  = adodb_query(DB, 'select count(*) as num_rec from TestTable');
+fprintf('Number of records after insertion is %i\n', after.num_rec);
+
+%% Access: Struct output default column labels
+% In case column labeld can not be deduced from select statement
+% adodb_query will use A, B, C, ... convention, similat to Excel
+x = adodb_query(DB, 'select count(*), max(office) from TestTable');
+disp(x)
+
+%% Access: Close DB connection
+DB.release;
+
+%% MS SQL: Initialize MS SQL database 
+cn_str = 'PROVIDER=SQLOLEDB; Data Source=10.100.10.10; initial catalog=my_database; User ID=my_username; password=my_password';
+DB = adodb_cn(cn_str, 240);
+
+%% MS SQL: Create TEMP table
+sql = ['CREATE TABLE TEMP ( ',...  
+         'blob    varbinary(max), ',...
+         'name    varchar(64)',...
+       ');'];
+adodb_query(DB, sql); 
+
+%% MS SQL: Insert two new records 
+adodb_query(DB, ['insert into TEMP (name) values (''football''); ',...
+                 'insert into TEMP (name) values (''baseball''); ']); 
+[~, Table] = adodb_query(DB, 'select * from TEMP');
+disp(Table);
+ 
+%% MS SQL: Update one of the records to add a blob          
+selectRecordSql = 'SELECT TOP(1) * FROM TEMP WHERE name=''football'''; 
+fname = 'football.jpg';
+imwrite(imread(fname),fname); % copy file to current directry
+adodb_update_blob(DB, selectRecordSql, 'blob', fname);
+[~, Table] = adodb_query(DB, 'select * from TEMP');
+disp(Table);
+
+%% MS SQL: Read a blob from the database and store it to the hard disk
+x = adodb_query(DB, selectRecordSql);
+fid = fopen('MyFootball.jpg', 'wb');  
+fwrite(fid, x.blob, 'uint8');     % dump the raw binary to the hard disk 
+fclose(fid);
+I = imread('MyFootball.jpg');     % read it as an image
+imshow(I);
+
+%% MS SQL: Run statement with multiple queries 
+sql = 'Select count(*) from TEMP;    select * from TEMP';
+[Struct Table] = adodb_query(DB, sql);
+disp('Output in in struct format:')
+disp(Struct)
+disp('Output in in table format:')
+disp(Table)
+
+%% MS SQL: Run statement with multiple queries with Pref.MultipleQuery = true flag
+Pref = []; Pref.MultipleQuery = true;
+[Struct Table] = adodb_query(DB, sql, Pref);
+disp('Output of query 1 in struct format:')
+disp(Struct{1})
+disp('Output of query 1 in table format:')
+disp(Table{1})
+disp('Output of query 2 in struct format:')
+disp(Struct{2})
+disp('Output of query 2 in table format:')
+disp(Table{2})
+
+%% MS SQL: Run multi-query sql with an incorect second statement  
+% First correct statement did not modify database
+sql = ['Update TEMP set name=''basketball'' where name=''baseball''; ',...
+       'select WrongName from TEMP'];
+try
+  x = adodb_query(DB, sql);
+catch ME
+  disp(ME.message);
+end
+[~, TEMP] = adodb_query(DB, 'select * from TEMP');
+disp('Output in table format:')
+disp(TEMP)
+
+%% MS SQL: Calling Microsoft SQL Server stored procedures 
+% Calling build in stored procedure xp_msver
+Struct = adodb_query(DB, 'EXEC xp_msver');
+for i = 1:11
+  fprintf('%20s = %s\n', Struct.name{i}, Struct.character_value{i});
+end
+
+%% MS SQL: Delete table TEMP and close DB connection
+adodb_query(DB, 'DROP TABLE "TEMP"'); 
+DB.release;
+
+
+
+
+##### SOURCE END #####
+--></body></html>
