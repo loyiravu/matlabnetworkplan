@@ -1,0 +1,517 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Accord.Statistics</name>
+    </assembly>
+    <members>
+        <member name="T:Accord.Statistics.Models.Markov.HiddenMarkovModelType">
+            <summary>
+              Hidden Markov Model topology.
+            </summary>
+        </member>
+        <member name="F:Accord.Statistics.Models.Markov.HiddenMarkovModelType.Ergodic">
+            <summary>
+              Specifies a fully connected model,
+              in which all states are reachable
+              from all other states.
+            </summary>
+        </member>
+        <member name="F:Accord.Statistics.Models.Markov.HiddenMarkovModelType.Forward">
+            <summary>
+              Specifies a model in which only forward
+              state transitions are allowed.
+            </summary>
+        </member>
+        <member name="T:Accord.Statistics.Models.Markov.HiddenMarkovModel">
+            <summary>
+              Hidden Markov Model.
+            </summary>
+            
+            <remarks>
+            <para>
+              Hidden Markov Models (HMM) are stochastic methods to model temporal and sequence
+              data. They are especially known for their application in temporal pattern recognition
+              such as speech, handwriting, gesture recognition, part-of-speech tagging, musical
+              score following, partial discharges and bioinformatics.</para>
+            <para>
+              Dynamical systems of discrete nature assumed to be governed by a Markov chain emits
+              a sequence of observable outputs. Under the Markov assumption, it is also assumed that
+              the latest output depends only on the current state of the system. Such states are often
+              not known from the observer when only the output values are observable.</para>
+              
+            <para>
+              Hidden Markov Models attempt to model such systems and allow, among other things,
+              <list type="number">
+                <item><description>
+                  To infer the most likely sequence of states that produced a given output sequence,</description></item>
+                <item><description>
+                  Infer which will be the most likely next state (and thus predicting the next output),</description></item>
+                <item><description>
+                  Calculate the probability that a given sequence of outputs originated from the system
+                  (allowing the use of hidden Markov models for sequence classification).</description></item>
+                </list></para>
+                
+            <para>     
+              The “hidden” in Hidden Markov Models comes from the fact that the observer does not
+              know in which state the system may be in, but has only a probabilistic insight on where
+              it should be.</para>
+              
+            <para>
+              References:
+              <list type="bullet">
+                <item><description>
+                  http://en.wikipedia.org/wiki/Hidden_Markov_model</description></item>
+                <item><description>
+                  http://www.shokhirev.com/nikolai/abc/alg/hmm/hmm.html</description></item>
+                <item><description>
+                  P396-397 “Spoken Language Processing” by X. Huang </description></item>
+                <item><description>
+                  Dawei Shen. Some mathematics for HMMs, 2008. Available in:
+                  http://courses.media.mit.edu/2010fall/mas622j/ProblemSets/ps4/tutorial.pdf</description></item>
+                <item><description>
+                  http://www.stanford.edu/class/cs262/presentations/lecture7.pdf</description></item>
+                <item><description>
+                  http://cs.oberlin.edu/~jdonalds/333/lecture11.html</description></item>
+              </list></para>
+            </remarks>
+            
+            <example>
+              <code>
+              // We will try to create a Hidden Markov Model which
+              //  can detect if a given sequence starts with a zero
+              //  and has any number of ones after that.
+              int[][] sequences = new int[][] 
+              {
+                  new int[] { 0,1,1,1,1,0,1,1,1,1 },
+                  new int[] { 0,1,1,1,0,1,1,1,1,1 },
+                  new int[] { 0,1,1,1,1,1,1,1,1,1 },
+                  new int[] { 0,1,1,1,1,1         },
+                  new int[] { 0,1,1,1,1,1,1       },
+                  new int[] { 0,1,1,1,1,1,1,1,1,1 },
+                  new int[] { 0,1,1,1,1,1,1,1,1,1 },
+              };
+              
+              // Creates a new Hidden Markov Model with 3 states for
+              //  an output alphabet of two characters (zero and one)
+              HiddenMarkovModel hmm = new HiddenMarkovModel(2, 3);
+              
+              // Try to fit the model to the data until the difference in
+              //  the average log-likelihood changes only by as little as 0.0001
+              hmm.Learn(sequences, 0.0001);
+              
+              // Calculate the probability that the given
+              //  sequences originated from the model
+              double l1 = hmm.Evaluate(new int[] { 0, 1 });        // 0.9999  
+              double l2 = hmm.Evaluate(new int[] { 0, 1, 1, 1 });  // 0.9166
+              
+              // Sequences which do not start with zero have much lesser probability.
+              double l3 = hmm.Evaluate(new int[] { 1, 1 });        // 0.0000
+              double l4 = hmm.Evaluate(new int[] { 1, 0, 0, 0 });  // 0.0000
+              </code>
+            </example>
+            
+        </member>
+        <member name="M:Accord.Statistics.Models.Markov.HiddenMarkovModel.#ctor(System.Int32,System.Double[])">
+            <summary>
+              Constructs a new Hidden Markov Model.
+            </summary>
+            <param name="symbols">The number of output symbols used for this model.</param>
+            <param name="probabilities">The initial state probabilities for this model.</param>
+        </member>
+        <member name="M:Accord.Statistics.Models.Markov.HiddenMarkovModel.#ctor(System.Double[0:,0:],System.Double[0:,0:],System.Double[])">
+            <summary>
+              Constructs a new Hidden Markov Model.
+            </summary>
+            <param name="transitions">The transitions matrix A for this model.</param>
+            <param name="emissions">The emissions matrix B for this model.</param>
+            <param name="probabilities">The initial state probabilities for this model.</param>
+        </member>
+        <member name="M:Accord.Statistics.Models.Markov.HiddenMarkovModel.#ctor(System.Int32,System.Int32)">
+            <summary>
+              Constructs a new Hidden Markov Model.
+            </summary>
+            <param name="symbols">The number of output symbols used for this model.</param>
+            <param name="states">The number of states for this model.</param>
+        </member>
+        <member name="M:Accord.Statistics.Models.Markov.HiddenMarkovModel.#ctor(System.Int32,System.Int32,Accord.Statistics.Models.Markov.HiddenMarkovModelType)">
+            <summary>
+              Constructs a new Hidden Markov Model.
+            </summary>
+            <param name="symbols">The number of output symbols used for this model.</param>
+            <param name="states">The number of states for this model.</param>
+            <param name="type">The topology which should be used by this model.</param>
+        </member>
+        <member name="M:Accord.Statistics.Models.Markov.HiddenMarkovModel.#ctor(System.Double[0:,0:],System.Double[],System.Nullable{System.Int32},Accord.Statistics.Models.Markov.HiddenMarkovModelType)">
+            <summary>
+              Constructs a new Hidden Markov Model.
+            </summary>
+        </member>
+        <member name="M:Accord.Statistics.Models.Markov.HiddenMarkovModel.Decode(System.Int32[],System.Double@)">
+            <summary>
+              Calculates the most likely sequence of hidden states
+              that produced the given observation sequence.
+            </summary>
+            <remarks>
+              Decoding problem. Given the HMM M = (A, B, pi) and  the observation sequence 
+              O = {o1,o2, ..., oK}, calculate the most likely sequence of hidden states Si
+              that produced this observation sequence O. This can be computed efficiently
+              using the Viterbi algorithm.
+            </remarks>
+            <param name="observations">A sequence of observations.</param>
+            <param name="probability">The state optimized probability.</param>
+            <returns>The sequence of states that most likely produced the sequence.</returns>
+        </member>
+        <member name="M:Accord.Statistics.Models.Markov.HiddenMarkovModel.Decode(System.Int32[],System.Boolean,System.Double@)">
+            <summary>
+              Calculates the most likely sequence of hidden states
+              that produced the given observation sequence.
+            </summary>
+            <remarks>
+              Decoding problem. Given the HMM M = (A, B, pi) and  the observation sequence 
+              O = {o1,o2, ..., oK}, calculate the most likely sequence of hidden states Si
+              that produced this observation sequence O. This can be computed efficiently
+              using the Viterbi algorithm.
+            </remarks>
+            <param name="observations">A sequence of observations.</param>
+            <param name="probability">The state optimized probability.</param>
+            <param name="logarithm">True to return the log-likelihood, false to return
+            the likelihood. Default is false (default is to return the likelihood).</param>
+            <returns>The sequence of states that most likely produced the sequence.</returns>
+        </member>
+        <member name="M:Accord.Statistics.Models.Markov.HiddenMarkovModel.Evaluate(System.Int32[])">
+            <summary>
+              Calculates the probability that this model has generated the given sequence.
+            </summary>
+            <remarks>
+              Evaluation problem. Given the HMM  M = (A, B, pi) and  the observation
+              sequence O = {o1, o2, ..., oK}, calculate the probability that model
+              M has generated sequence O. This can be computed efficiently using the
+              either the Viterbi or the Forward algorithms.
+            </remarks>
+            <param name="observations">
+              A sequence of observations.
+            </param>
+            <returns>
+              The probability that the given sequence has been generated by this model.
+            </returns>
+        </member>
+        <member name="M:Accord.Statistics.Models.Markov.HiddenMarkovModel.Evaluate(System.Int32[],System.Boolean)">
+            <summary>
+              Calculates the probability that this model has generated the given sequence.
+            </summary>
+            <remarks>
+              Evaluation problem. Given the HMM  M = (A, B, pi) and  the observation
+              sequence O = {o1, o2, ..., oK}, calculate the probability that model
+              M has generated sequence O. This can be computed efficiently using the
+              either the Viterbi or the Forward algorithms.
+            </remarks>
+            <param name="observations">
+              A sequence of observations.
+            </param>
+            <param name="logarithm">
+              True to return the log-likelihood, false to return
+              the likelihood. Default is false.
+            </param>
+            <returns>
+              The probability that the given sequence has been generated by this model.
+            </returns>
+        </member>
+        <member name="M:Accord.Statistics.Models.Markov.HiddenMarkovModel.Learn(System.Int32[],System.Int32,System.Double)">
+            <summary>
+              Runs the Baum-Welch learning algorithm for hidden Markov models.
+            </summary>
+            <remarks>
+              Learning problem. Given some training observation sequences O = {o1, o2, ..., oK}
+              and general structure of HMM (numbers of hidden and visible states), determine
+              HMM parameters M = (A, B, pi) that best fit training data. 
+            </remarks>
+            <param name="observations">
+              The sequence of observations to be used to train the model.
+            </param>
+            <param name="iterations">
+              The maximum number of iterations to be performed by the learning algorithm. If
+              specified as zero, the algorithm will learn until convergence of the model average
+              likelihood respecting the desired limit.
+            </param>
+            <param name="tolerance">
+              The likelihood convergence limit L between two iterations of the algorithm. The
+              algorithm will stop when the change in the likelihood for two consecutive iterations
+              has not changed by more than L percent of the likelihood. If left as zero, the
+              algorithm will ignore this parameter and iterates over a number of fixed iterations
+              specified by the previous parameter.
+            </param>
+            <returns>
+              The average log-likelihood for the observations after the model has been trained.
+            </returns>
+        </member>
+        <member name="M:Accord.Statistics.Models.Markov.HiddenMarkovModel.Learn(System.Int32[],System.Int32)">
+            <summary>
+              Runs the Baum-Welch learning algorithm for hidden Markov models.
+            </summary>
+            <remarks>
+              Learning problem. Given some training observation sequences O = {o1, o2, ..., oK}
+              and general structure of HMM (numbers of hidden and visible states), determine
+              HMM parameters M = (A, B, pi) that best fit training data. 
+            </remarks>
+            <param name="observations">
+              The sequence of observations to be used to train the model.
+            </param>
+            <param name="iterations">
+              The maximum number of iterations to be performed by the learning algorithm. If
+              specified as zero, the algorithm will learn until convergence of the model average
+              likelihood respecting the desired limit.
+            </param>
+            <returns>
+              The average log-likelihood for the observations after the model has been trained.
+            </returns>
+        </member>
+        <member name="M:Accord.Statistics.Models.Markov.HiddenMarkovModel.Learn(System.Int32[],System.Double)">
+            <summary>
+              Runs the Baum-Welch learning algorithm for hidden Markov models.
+            </summary>
+            <remarks>
+              Learning problem. Given some training observation sequences O = {o1, o2, ..., oK}
+              and general structure of HMM (numbers of hidden and visible states), determine
+              HMM parameters M = (A, B, pi) that best fit training data. 
+            </remarks>
+            <param name="observations">
+              The sequence of observations to be used to train the model.
+            </param>
+            <param name="tolerance">
+              The likelihood convergence limit L between two iterations of the algorithm. The
+              algorithm will stop when the change in the likelihood for two consecutive iterations
+              has not changed by more than L percent of the likelihood. If left as zero, the
+              algorithm will ignore this parameter and iterates over a number of fixed iterations
+              specified by the previous parameter.
+            </param>
+            <returns>
+              The average log-likelihood for the observations after the model has been trained.
+            </returns>
+        </member>
+        <member name="M:Accord.Statistics.Models.Markov.HiddenMarkovModel.Learn(System.Int32[][],System.Double)">
+            <summary>
+              Runs the Baum-Welch learning algorithm for hidden Markov models.
+            </summary>
+            <remarks>
+              Learning problem. Given some training observation sequences O = {o1, o2, ..., oK}
+              and general structure of HMM (numbers of hidden and visible states), determine
+              HMM parameters M = (A, B, pi) that best fit training data. 
+            </remarks>
+            <param name="observations">
+              An array of observation sequences to be used to train the model.
+            </param>
+            <param name="tolerance">
+              The likelihood convergence limit L between two iterations of the algorithm. The
+              algorithm will stop when the change in the likelihood for two consecutive iterations
+              has not changed by more than L percent of the likelihood. If left as zero, the
+              algorithm will ignore this parameter and iterates over a number of fixed iterations
+              specified by the previous parameter.
+            </param>
+            <returns>
+              The average log-likelihood for the observations after the model has been trained.
+            </returns>
+        </member>
+        <member name="M:Accord.Statistics.Models.Markov.HiddenMarkovModel.Learn(System.Int32[][],System.Int32)">
+            <summary>
+              Runs the Baum-Welch learning algorithm for hidden Markov models.
+            </summary>
+            <remarks>
+              Learning problem. Given some training observation sequences O = {o1, o2, ..., oK}
+              and general structure of HMM (numbers of hidden and visible states), determine
+              HMM parameters M = (A, B, pi) that best fit training data. 
+            </remarks>
+            <param name="observations">
+              An array of observation sequences to be used to train the model.
+            </param>
+            <param name="iterations">
+              The maximum number of iterations to be performed by the learning algorithm. If
+              specified as zero, the algorithm will learn until convergence of the model average
+              likelihood respecting the desired limit.
+            </param>
+            <returns>
+              The average log-likelihood for the observations after the model has been trained.
+            </returns>
+        </member>
+        <member name="M:Accord.Statistics.Models.Markov.HiddenMarkovModel.Learn(System.Int32[][],System.Int32,System.Double)">
+            <summary>
+              Runs the Baum-Welch learning algorithm for hidden Markov models.
+            </summary>
+            <remarks>
+              Learning problem. Given some training observation sequences O = {o1, o2, ..., oK}
+              and general structure of HMM (numbers of hidden and visible states), determine
+              HMM parameters M = (A, B, pi) that best fit training data. 
+            </remarks>
+            <param name="iterations">
+              The maximum number of iterations to be performed by the learning algorithm. If
+              specified as zero, the algorithm will learn until convergence of the model average
+              likelihood respecting the desired limit.
+            </param>
+            <param name="observations">
+              An array of observation sequences to be used to train the model.
+            </param>
+            <param name="tolerance">
+              The likelihood convergence limit L between two iterations of the algorithm. The
+              algorithm will stop when the change in the likelihood for two consecutive iterations
+              has not changed by more than L percent of the likelihood. If left as zero, the
+              algorithm will ignore this parameter and iterates over a number of fixed iterations
+              specified by the previous parameter.
+            </param>
+            <returns>
+              The average log-likelihood for the observations after the model has been trained.
+            </returns>
+        </member>
+        <member name="M:Accord.Statistics.Models.Markov.HiddenMarkovModel.forward(System.Int32[],System.Double[]@)">
+            <summary>
+              Baum-Welch forward pass (with scaling)
+            </summary>
+            <remarks>
+              Reference: http://courses.media.mit.edu/2010fall/mas622j/ProblemSets/ps4/tutorial.pdf
+            </remarks>
+        </member>
+        <member name="M:Accord.Statistics.Models.Markov.HiddenMarkovModel.backward(System.Int32[],System.Double[])">
+            <summary>
+              Baum-Welch backward pass (with scaling)
+            </summary>
+            <remarks>
+              Reference: http://courses.media.mit.edu/2010fall/mas622j/ProblemSets/ps4/tutorial.pdf
+            </remarks>
+        </member>
+        <member name="M:Accord.Statistics.Models.Markov.HiddenMarkovModel.checkConvergence(System.Double,System.Double,System.Int32,System.Int32,System.Double)">
+            <summary>
+              Checks if a model has converged given the likelihoods between two iterations
+              of the Baum-Welch algorithm and a criteria for convergence.
+            </summary>
+        </member>
+        <member name="P:Accord.Statistics.Models.Markov.HiddenMarkovModel.Symbols">
+            <summary>
+              Gets the number of symbols in the alphabet of this model.
+            </summary>
+        </member>
+        <member name="P:Accord.Statistics.Models.Markov.HiddenMarkovModel.Emissions">
+            <summary>
+              Gets the Emission matrix (B) for this model.
+            </summary>
+        </member>
+        <member name="P:Accord.Statistics.Models.Markov.HiddenMarkovModel.States">
+            <summary>
+              Gets the number of states of this model.
+            </summary>
+        </member>
+        <member name="P:Accord.Statistics.Models.Markov.HiddenMarkovModel.Probabilities">
+            <summary>
+              Gets the initial probabilities for this model.
+            </summary>
+        </member>
+        <member name="P:Accord.Statistics.Models.Markov.HiddenMarkovModel.Transitions">
+            <summary>
+              Gets the Transition matrix (A) for this model.
+            </summary>
+        </member>
+        <member name="P:Accord.Statistics.Models.Markov.HiddenMarkovModel.Tag">
+            <summary>
+              Gets or sets a user-defined tag.
+            </summary>
+        </member>
+        <member name="T:Accord.Statistics.Models.Markov.MarkovSequenceClassifier">
+            <summary>
+              Hidden Markov Model Set for Sequence Classification.
+            </summary>
+            
+            <remarks>
+              This class uses a set of hidden Markov models to classify integer sequences.
+              Each model will try to learn and recognize each of the different output classes.
+            </remarks>
+            
+            <example>
+              <code>
+              // Declare some testing data
+              int[][] inputs =
+              {
+                  new int[] { 0,1,1,0 },   // Class 0
+                  new int[] { 0,0,1,0 },   // Class 0
+                  new int[] { 0,1,1,1,0 }, // Class 0
+                  new int[] { 0,1,0 },     // Class 0
+                  
+                  new int[] { 1,0,0,1 },   // Class 1
+                  new int[] { 1,1,0,1 },   // Class 1
+                  new int[] { 1,0,0,0,1 }, // Class 1
+                  new int[] { 1,0,1 },     // Class 1
+              };
+                
+              int[] outputs =
+              {
+                  0,0,0,0, // First four sequences are of class 0
+                  1,1,1,1, // Last  four sequences are of class 1
+              };
+                
+              // We are trying to predict two different classes
+              int classes = 2;
+                
+              // Each sequence may have up to two symbols (0 or 1)
+              int symbols = 2;
+            
+              // Nested models will have two states each
+              int[] states = new int[] { 2, 2 };
+               
+              // Creates a new Hidden Markov Model Classifier with the given parameters
+              MarkovSequenceClassifier hmc = new MarkovSequenceClassifier(classes, symbols, states);
+                
+              // Will train until convergence of the average likelihood
+              double likelihood = hmc.Learn(inputs, outputs, 0.001);
+                
+              // And finally we will ask for the likelihood of a given sequence
+              hmc.Compute(inputs[i], out likelihood);
+              </code>
+            </example>
+            
+        </member>
+        <member name="M:Accord.Statistics.Models.Markov.MarkovSequenceClassifier.#ctor(System.Int32,System.Int32,System.Int32[])">
+            <summary>
+              Constructs a new Hidden Markov Model Sequence Classifier.
+            </summary>
+        </member>
+        <member name="M:Accord.Statistics.Models.Markov.MarkovSequenceClassifier.#ctor(System.Int32,System.Int32,System.Int32[],System.String[])">
+            <summary>
+              Constructs a new Hidden Markov Model Sequence Classifier.
+            </summary>
+        </member>
+        <member name="M:Accord.Statistics.Models.Markov.MarkovSequenceClassifier.#ctor(System.Int32,System.Int32,System.Int32[],System.String[],Accord.Statistics.Models.Markov.HiddenMarkovModelType)">
+            <summary>
+              Constructs a new Hidden Markov Model Sequence Classifier.
+            </summary>
+        </member>
+        <member name="M:Accord.Statistics.Models.Markov.MarkovSequenceClassifier.Learn(System.Int32[][],System.Int32[],System.Int32)">
+            <summary>
+              Trains each model to recognize each of the output labels.
+            </summary>
+            <returns>The sum log-likelihood for all models after training.</returns>
+        </member>
+        <member name="M:Accord.Statistics.Models.Markov.MarkovSequenceClassifier.Learn(System.Int32[][],System.Int32[],System.Double)">
+            <summary>
+              Trains each model to recognize each of the output labels.
+            </summary>
+            <returns>The sum log-likelihood for all models after training.</returns>
+        </member>
+        <member name="M:Accord.Statistics.Models.Markov.MarkovSequenceClassifier.Learn(System.Int32[][],System.Int32[],System.Int32,System.Double)">
+            <summary>
+              Trains each model to recognize each of the output labels.
+            </summary>
+            <returns>The sum log-likelihood for all models after training.</returns>
+        </member>
+        <member name="M:Accord.Statistics.Models.Markov.MarkovSequenceClassifier.Compute(System.Int32[],System.Double@)">
+            <summary>
+              Computes the most likely class for a given sequence.
+            </summary>
+        </member>
+        <member name="M:Accord.Statistics.Models.Markov.MarkovSequenceClassifier.Compute(System.Int32[][],System.Double[]@)">
+            <summary>
+              Computes the most likely output for an array of input sequences.
+            </summary>
+        </member>
+        <member name="P:Accord.Statistics.Models.Markov.MarkovSequenceClassifier.Models">
+            <summary>
+              Gets the Hidden Markov Models contained in this ensemble.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,374 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Accord.Controls.Statistics</name>
+    </assembly>
+    <members>
+        <member name="T:Accord.Controls.ArrayPropertyDescriptor">
+            <summary>
+              Provides an abstraction of array values.
+            </summary>
+        </member>
+        <member name="M:Accord.Controls.ArrayPropertyDescriptor.#ctor(System.String,System.Type,System.Int32)">
+            <summary>
+              Constructs a new Array Property Descriptor.
+            </summary>
+            <param name="name">A title for the array.</param>
+            <param name="type">The type of the property being displayed.</param>
+            <param name="index">The index to display.</param>
+        </member>
+        <member name="M:Accord.Controls.ArrayPropertyDescriptor.GetValue(System.Object)">
+            <summary>
+              Gets a value from the array.
+            </summary>
+        </member>
+        <member name="M:Accord.Controls.ArrayPropertyDescriptor.SetValue(System.Object,System.Object)">
+            <summary>
+              Sets a value to the array.
+            </summary>
+        </member>
+        <member name="M:Accord.Controls.ArrayPropertyDescriptor.CanResetValue(System.Object)">
+            <summary>
+              Returns false.
+            </summary>
+        </member>
+        <member name="M:Accord.Controls.ArrayPropertyDescriptor.ResetValue(System.Object)">
+            <summary>
+              Does nothing.
+            </summary>
+        </member>
+        <member name="M:Accord.Controls.ArrayPropertyDescriptor.ShouldSerializeValue(System.Object)">
+            <summary>
+              Returns false.
+            </summary>
+            <param name="component"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Accord.Controls.ArrayPropertyDescriptor.DisplayName">
+            <summary>
+              Returns the name of the array.
+            </summary>
+        </member>
+        <member name="P:Accord.Controls.ArrayPropertyDescriptor.ComponentType">
+            <summary>
+              Returns the type of ArrayRowView.
+            </summary>
+        </member>
+        <member name="P:Accord.Controls.ArrayPropertyDescriptor.IsReadOnly">
+            <summary>
+              Returns false.
+            </summary>
+        </member>
+        <member name="P:Accord.Controls.ArrayPropertyDescriptor.PropertyType">
+            <summary>
+              Gets the type of the underlying multidimensional array.
+            </summary>
+        </member>
+        <member name="T:Accord.Controls.ArrayDataView">
+            <summary>
+            Represents a data bondable, customized view of two dimensional array
+            </summary>
+        </member>
+        <member name="F:Accord.Controls.ArrayDataView.rows">
+            <summary>
+            array rows.
+            </summary>
+        </member>
+        <member name="F:Accord.Controls.ArrayDataView.data">
+            <summary>
+            Data which will be binded.
+            </summary>
+        </member>
+        <member name="F:Accord.Controls.ArrayDataView.columnNames">
+            <summary>
+            Alternative column names.
+            </summary>
+        </member>
+        <member name="M:Accord.Controls.ArrayDataView.#ctor(System.Array)">
+            <summary>
+            Initializes a new ArrayDataView from array.
+            </summary>
+            <param name="array">array of data.</param>
+        </member>
+        <member name="M:Accord.Controls.ArrayDataView.#ctor(System.Array,System.Object[])">
+            <summary>
+            Initializes a new ArrayDataView from array with custom column names.
+            </summary>
+            <param name="array">array of data.</param>
+            <param name="columnNames">collection of column names.</param>
+        </member>
+        <member name="M:Accord.Controls.ArrayDataView.Reset">
+            <summary>
+              Resets the data binding.
+            </summary>
+        </member>
+        <member name="M:Accord.Controls.ArrayDataView.AddIndex(System.ComponentModel.PropertyDescriptor)">
+            <summary>
+              Does nothing.
+            </summary>
+        </member>
+        <member name="M:Accord.Controls.ArrayDataView.ApplySort(System.ComponentModel.PropertyDescriptor,System.ComponentModel.ListSortDirection)">
+            <summary>
+              Does nothing.
+            </summary>
+        </member>
+        <member name="M:Accord.Controls.ArrayDataView.Find(System.ComponentModel.PropertyDescriptor,System.Object)">
+            <summary>
+              Does nothing.
+            </summary>
+        </member>
+        <member name="M:Accord.Controls.ArrayDataView.RemoveSort">
+            <summary>
+              Does nothing.
+            </summary>
+        </member>
+        <member name="M:Accord.Controls.ArrayDataView.AddNew">
+            <summary>
+              Does nothing.
+            </summary>
+        </member>
+        <member name="M:Accord.Controls.ArrayDataView.RemoveIndex(System.ComponentModel.PropertyDescriptor)">
+            <summary>
+              Does nothing.
+            </summary>
+        </member>
+        <member name="M:Accord.Controls.ArrayDataView.RemoveAt(System.Int32)">
+            <summary>
+              Does nothing.
+            </summary>
+        </member>
+        <member name="M:Accord.Controls.ArrayDataView.Insert(System.Int32,System.Object)">
+            <summary>
+              Does nothing.
+            </summary>
+        </member>
+        <member name="M:Accord.Controls.ArrayDataView.Remove(System.Object)">
+            <summary>
+              Does nothing.
+            </summary>
+        </member>
+        <member name="M:Accord.Controls.ArrayDataView.Contains(System.Object)">
+            <summary>
+              Does nothing.
+            </summary>
+        </member>
+        <member name="M:Accord.Controls.ArrayDataView.Clear">
+            <summary>
+              Does nothing.
+            </summary>
+        </member>
+        <member name="M:Accord.Controls.ArrayDataView.IndexOf(System.Object)">
+            <summary>
+              Does nothing.
+            </summary>
+        </member>
+        <member name="M:Accord.Controls.ArrayDataView.Add(System.Object)">
+            <summary>
+              Does nothing.
+            </summary>
+        </member>
+        <member name="M:Accord.Controls.ArrayDataView.CopyTo(System.Array,System.Int32)">
+            <summary>
+              Multidimensional arrays do not support Array copying.
+            </summary>
+        </member>
+        <member name="M:Accord.Controls.ArrayDataView.GetEnumerator">
+            <summary>
+              Gets the array enumerator.
+            </summary>
+        </member>
+        <member name="E:Accord.Controls.ArrayDataView.ListChanged">
+            <summary>
+              Raised when the list changes.
+            </summary>
+        </member>
+        <member name="P:Accord.Controls.ArrayDataView.Data">
+            <summary>
+              Gets or sets the array currently bound.
+            </summary>
+        </member>
+        <member name="P:Accord.Controls.ArrayDataView.AllowNew">
+            <summary>
+              Arrays do not allow for member insertion.
+            </summary>
+        </member>
+        <member name="P:Accord.Controls.ArrayDataView.SortProperty">
+            <summary>
+              Does nothing.
+            </summary>
+        </member>
+        <member name="P:Accord.Controls.ArrayDataView.SupportsSorting">
+            <summary>
+              Does nothing.
+            </summary>
+        </member>
+        <member name="P:Accord.Controls.ArrayDataView.IsSorted">
+            <summary>
+              Does nothing.
+            </summary>
+        </member>
+        <member name="P:Accord.Controls.ArrayDataView.AllowRemove">
+            <summary>
+              Arrays do not allow member removal.
+            </summary>
+        </member>
+        <member name="P:Accord.Controls.ArrayDataView.SupportsSearching">
+            <summary>
+              Does nothing.
+            </summary>
+        </member>
+        <member name="P:Accord.Controls.ArrayDataView.SortDirection">
+            <summary>
+              Does nothing.
+            </summary>
+        </member>
+        <member name="P:Accord.Controls.ArrayDataView.SupportsChangeNotification">
+            <summary>
+              Does nothing.
+            </summary>
+        </member>
+        <member name="P:Accord.Controls.ArrayDataView.AllowEdit">
+            <summary>
+              Gets whether this view allows editing. Always true.
+            </summary>
+        </member>
+        <member name="P:Accord.Controls.ArrayDataView.IsReadOnly">
+            <summary>
+              This view is read only.
+            </summary>
+        </member>
+        <member name="P:Accord.Controls.ArrayDataView.Item(System.Int32)">
+            <summary>
+              Gets a row from this view.
+            </summary>
+        </member>
+        <member name="P:Accord.Controls.ArrayDataView.IsFixedSize">
+            <summary>
+              Arrays are always fixed size.
+            </summary>
+        </member>
+        <member name="P:Accord.Controls.ArrayDataView.IsSynchronized">
+            <summary>
+              Returns false.
+            </summary>
+        </member>
+        <member name="P:Accord.Controls.ArrayDataView.Count">
+            <summary>
+              Gets the length of the array.
+            </summary>
+        </member>
+        <member name="P:Accord.Controls.ArrayDataView.SyncRoot">
+            <summary>
+              Does nothing.
+            </summary>
+        </member>
+        <member name="T:Accord.Controls.ArrayRowView">
+            <summary>
+              Represents a row from array view.
+            </summary>
+            
+        </member>
+        <member name="M:Accord.Controls.ArrayRowView.#ctor(Accord.Controls.ArrayDataView,System.Int32)">
+            <summary>
+              Initializes a new instance of the <see cref="T:Accord.Controls.ArrayRowView"/> class.
+            </summary>
+        </member>
+        <member name="M:Accord.Controls.ArrayRowView.GetColumn(System.Int32)">
+            <summary>
+              Gets the value at the specified position of this row.
+            </summary>
+            <param name="index">The column index of the element to get.</param>
+        </member>
+        <member name="M:Accord.Controls.ArrayRowView.SetColumnValue(System.Int32,System.Object)">
+            <summary>
+              Sets a value to the element at the specified position of this row.
+            </summary>
+            <param name="index">The index of the element to set.</param>
+            <param name="value">The new value for the specified element.</param>
+        </member>
+        <member name="M:Accord.Controls.ArrayRowView.GetConverter">
+            <summary>
+              Returns null.
+            </summary>
+        </member>
+        <member name="M:Accord.Controls.ArrayRowView.GetEvents(System.Attribute[])">
+            <summary>
+              Does nothing.
+            </summary>
+        </member>
+        <member name="M:Accord.Controls.ArrayRowView.System#ComponentModel#ICustomTypeDescriptor#GetEvents">
+            <summary>
+              Does nothing.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Accord.Controls.ArrayRowView.GetComponentName">
+            <summary>
+              Returns null.
+            </summary>
+        </member>
+        <member name="M:Accord.Controls.ArrayRowView.GetPropertyOwner(System.ComponentModel.PropertyDescriptor)">
+            <summary>
+              Gets the owner ArrayDataView.
+            </summary>
+        </member>
+        <member name="M:Accord.Controls.ArrayRowView.GetAttributes">
+            <summary>
+              Does nothing.
+            </summary>
+        </member>
+        <member name="M:Accord.Controls.ArrayRowView.GetProperties(System.Attribute[])">
+            <summary>
+              Gets the values of the multidimensional array as properties.
+            </summary>
+        </member>
+        <member name="M:Accord.Controls.ArrayRowView.GetEditor(System.Type)">
+            <summary>
+              Returns null.
+            </summary>
+        </member>
+        <member name="M:Accord.Controls.ArrayRowView.GetDefaultProperty">
+            <summary>
+              Returns null.
+            </summary>
+        </member>
+        <member name="M:Accord.Controls.ArrayRowView.GetDefaultEvent">
+            <summary>
+              Returns null.
+            </summary>
+        </member>
+        <member name="M:Accord.Controls.ArrayRowView.GetClassName">
+            <summary>
+              Gets the name of this class.
+            </summary>
+        </member>
+        <member name="M:Accord.Controls.ArrayRowView.EndEdit">
+            <summary>
+              Does nothing.
+            </summary>
+        </member>
+        <member name="M:Accord.Controls.ArrayRowView.CancelEdit">
+            <summary>
+              Does nothing.
+            </summary>
+        </member>
+        <member name="M:Accord.Controls.ArrayRowView.BeginEdit">
+            <summary>
+              Does nothing.
+            </summary>
+        </member>
+        <member name="P:Accord.Controls.ArrayRowView.Item(System.String)">
+            <summary>
+              Gets the error message for the property with the given name.
+            </summary>
+        </member>
+        <member name="P:Accord.Controls.ArrayRowView.Error">
+            <summary>
+            Gets an error message indicating what is wrong with this object.
+            </summary>
+            <returns>
+            An error message indicating what is wrong with this object. The default is an empty string ("").
+            </returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RuleSet Name="Migrated rules for Accord.Math.ruleset" Description="This rule set was created from the CodeAnalysisRules property for the &quot;Debug (Any CPU)&quot; configuration in project &quot;G:\matlabnetworkplan\accord-hmm-source\Sources\Accord.Math\Accord.Math.csproj&quot;." ToolsVersion="10.0">
+  <IncludeAll Action="Warning" />
+  <Rules AnalyzerId="Microsoft.Analyzers.ManagedCodeAnalysis" RuleNamespace="Microsoft.Rules.Managed">
+    <Rule Id="CA1004" Action="None" />
+    <Rule Id="CA1704" Action="None" />
+    <Rule Id="CA1709" Action="None" />
+    <Rule Id="CA1814" Action="None" />
+  </Rules>
+</RuleSet>
