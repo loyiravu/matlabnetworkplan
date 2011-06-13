@@ -1,0 +1,137 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Accord.Math</name>
+    </assembly>
+    <members>
+        <member name="T:Accord.Math.Matrix">
+            <summary>
+            Static class Matrix. Defines a set of extension methods
+            that operates mainly on multidimensional arrays and vectors.
+            </summary>
+        </member>
+        <member name="M:Accord.Math.Matrix.Indexes(System.Int32,System.Int32)">
+            <summary>
+              Creates a index vector.
+            </summary>
+        </member>
+        <member name="M:Accord.Math.Matrix.Submatrix``1(``0[],System.Int32[])">
+            <summary>Returns a subvector extracted from the current vector.</summary>
+            <param name="data">The vector to return the subvector from.</param>
+            <param name="indexes">Array of indices.</param>
+            <remarks>
+              Routine adapted from Lutz Roeder's Mapack for .NET, September 2000.
+            </remarks>
+        </member>
+        <member name="M:Accord.Math.Matrix.SetColumn``1(``0[0:,0:],System.Int32,``0[])">
+            <summary>
+              Stores a column vector into the given column position of the matrix.
+            </summary>
+        </member>
+        <member name="M:Accord.Math.Matrix.GetRow``1(``0[0:,0:],System.Int32)">
+            <summary>
+              Gets a row vector from a matrix.
+            </summary>
+        </member>
+        <member name="M:Accord.Math.Matrix.SetRow``1(``0[0:,0:],System.Int32,``0[])">
+            <summary>
+              Stores a row vector into the given row position of the matrix.
+            </summary>
+        </member>
+        <member name="M:Accord.Math.Matrix.Find``1(``0[],System.Func{``0,System.Boolean})">
+            <summary>
+              Gets the indices of all elements matching a certain criteria.
+            </summary>
+            <typeparam name="T">The type of the array.</typeparam>
+            <param name="data">The array to search inside.</param>
+            <param name="func">The search criteria.</param>
+        </member>
+        <member name="M:Accord.Math.Matrix.Find``1(``0[],System.Func{``0,System.Boolean},System.Boolean)">
+            <summary>
+              Gets the indices of all elements matching a certain criteria.
+            </summary>
+            <typeparam name="T">The type of the array.</typeparam>
+            <param name="data">The array to search inside.</param>
+            <param name="func">The search criteria.</param>
+            <param name="firstOnly">
+               Set to true to stop when the first element is
+               found, set to false to get all elements.
+            </param>
+        </member>
+        <member name="M:Accord.Math.Matrix.Find``1(``0[0:,0:],System.Func{``0,System.Boolean})">
+            <summary>
+              Gets the indices of all elements matching a certain criteria.
+            </summary>
+            <typeparam name="T">The type of the array.</typeparam>
+            <param name="data">The array to search inside.</param>
+            <param name="func">The search criteria.</param>
+        </member>
+        <member name="M:Accord.Math.Matrix.Find``1(``0[0:,0:],System.Func{``0,System.Boolean},System.Boolean)">
+            <summary>
+              Gets the indices of all elements matching a certain criteria.
+            </summary>
+            <typeparam name="T">The type of the array.</typeparam>
+            <param name="data">The array to search inside.</param>
+            <param name="func">The search criteria.</param>
+            <param name="firstOnly">
+               Set to true to stop when the first element is
+               found, set to false to get all elements.
+            </param>
+        </member>
+        <member name="M:Accord.Math.Matrix.Max``1(``0[],System.Int32@)">
+            <summary>
+              Gets the maximum element in a vector.
+            </summary>
+        </member>
+        <member name="M:Accord.Math.Matrix.Max``1(``0[])">
+            <summary>
+              Gets the maximum element in a vector.
+            </summary>
+        </member>
+        <member name="M:Accord.Math.Matrix.Min``1(``0[],System.Int32@)">
+            <summary>
+              Gets the minimum element in a vector.
+            </summary>
+        </member>
+        <member name="M:Accord.Math.Matrix.Min``1(``0[])">
+            <summary>
+              Gets the minimum element in a vector.
+            </summary>
+        </member>
+        <member name="M:Accord.Math.Matrix.ToMatrix``1(``0[][])">
+            <summary>
+              Converts a jagged-array into a multidimensional array.
+            </summary>
+        </member>
+        <member name="M:Accord.Math.Matrix.ToMatrix``1(``0[])">
+            <summary>
+              Converts an array into a multidimensional array.
+            </summary>
+        </member>
+        <member name="M:Accord.Math.Matrix.ToArray``1(``0[0:,0:])">
+            <summary>
+              Converts a multidimensional array into a jagged-array.
+            </summary>
+        </member>
+        <member name="M:Accord.Math.Matrix.ToMatrix(System.Data.DataTable,System.String[]@)">
+            <summary>
+              Converts a DataTable to a double[,] array.
+            </summary>
+        </member>
+        <member name="M:Accord.Math.Matrix.ToMatrix(System.Data.DataTable)">
+            <summary>
+              Converts a DataTable to a double[,] array.
+            </summary>
+        </member>
+        <member name="M:Accord.Math.Matrix.ToArray(System.Data.DataTable)">
+            <summary>
+              Converts a DataTable to a double[][] array.
+            </summary>
+        </member>
+        <member name="M:Accord.Math.Matrix.ToArray(System.Data.DataColumn)">
+            <summary>
+              Converts a DataColumn to a double[] array.
+            </summary>
+        </member>
+    </members>
+</doc>

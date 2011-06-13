@@ -1,0 +1,8 @@
+G:\matlabnetworkplan\accord-hmm-source\Release\Accord.Controls.Statistics.XML
+G:\matlabnetworkplan\accord-hmm-source\Release\Accord.Controls.Statistics.dll
+G:\matlabnetworkplan\accord-hmm-source\Release\Accord.Controls.Statistics.pdb
+G:\matlabnetworkplan\accord-hmm-source\Release\Accord.Controls.Statistics.dll.CodeAnalysisLog.xml
+G:\matlabnetworkplan\accord-hmm-source\Release\Accord.Controls.Statistics.dll.lastcodeanalysissucceeded
+G:\matlabnetworkplan\accord-hmm-source\Sources\Accord.Statistics.Controls\obj\Release\ResolveAssemblyReference.cache
+G:\matlabnetworkplan\accord-hmm-source\Sources\Accord.Statistics.Controls\obj\Release\Accord.Controls.Statistics.dll
+G:\matlabnetworkplan\accord-hmm-source\Sources\Accord.Statistics.Controls\obj\Release\Accord.Controls.Statistics.pdb

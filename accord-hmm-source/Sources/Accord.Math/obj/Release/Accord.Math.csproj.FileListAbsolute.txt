@@ -1,0 +1,8 @@
+G:\matlabnetworkplan\accord-hmm-source\Release\Accord.Math.XML
+G:\matlabnetworkplan\accord-hmm-source\Release\Accord.Math.dll
+G:\matlabnetworkplan\accord-hmm-source\Release\Accord.Math.pdb
+G:\matlabnetworkplan\accord-hmm-source\Release\Accord.Math.dll.CodeAnalysisLog.xml
+G:\matlabnetworkplan\accord-hmm-source\Release\Accord.Math.dll.lastcodeanalysissucceeded
+G:\matlabnetworkplan\accord-hmm-source\Sources\Accord.Math\obj\Release\ResolveAssemblyReference.cache
+G:\matlabnetworkplan\accord-hmm-source\Sources\Accord.Math\obj\Release\Accord.Math.dll
+G:\matlabnetworkplan\accord-hmm-source\Sources\Accord.Math\obj\Release\Accord.Math.pdb

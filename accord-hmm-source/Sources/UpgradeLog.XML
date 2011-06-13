@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="Accord.NET">
+</Property><Property Name="Solution File" Value="G:\matlabnetworkplan\accord-hmm-source\Sources\Accord.NET.sln">
+</Property><Property Name="Date" Value="2011年6月12日 星期日">
+</Property><Property Name="Time" Value="16:15">
+</Property></Properties><Event ErrorLevel="0" Project="Accord.Math" Source="Accord.Math\Accord.Math.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="Accord.Math" Source="Accord.Math\Accord.Math.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Accord.Statistics" Source="Accord.Statistics\Accord.Statistics.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="Accord.Statistics" Source="Accord.Statistics\Accord.Statistics.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="HMM" Source="..\Samples\Statistics\HMM\HMM.csproj" Description="The project file does not require conversion.">
+</Event><Event ErrorLevel="3" Project="HMM" Source="..\Samples\Statistics\HMM\HMM.csproj" Description="No Conversion Required">
+</Event><Event ErrorLevel="0" Project="Accord.Controls.Statistics" Source="Accord.Statistics.Controls\Accord.Controls.Statistics.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="Accord.Controls.Statistics" Source="Accord.Statistics.Controls\Accord.Controls.Statistics.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="Accord.NET.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="Accord.NET.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Accord.Math" Source="Accord.Math\Accord.Math.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="Accord.Math" Source="Accord.Math\Accord.Math.csproj" Description="Created rule set file &quot;G:\matlabnetworkplan\accord-hmm-source\Sources\Accord.Math\Migrated rules for Accord.Math.ruleset&quot; for the &quot;Debug (Any CPU)&quot; configuration.">
+</Event><Event ErrorLevel="0" Project="Accord.Math" Source="Accord.Math\Accord.Math.csproj" Description="Created rule set file &quot;G:\matlabnetworkplan\accord-hmm-source\Sources\Accord.Math\Migrated rules for Accord.Math (2).ruleset&quot; for the &quot;Release (Any CPU)&quot; configuration.">
+</Event><Event ErrorLevel="0" Project="Accord.Statistics" Source="Accord.Statistics\Accord.Statistics.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="Accord.Statistics" Source="Accord.Statistics\Accord.Statistics.csproj" Description="Created rule set file &quot;G:\matlabnetworkplan\accord-hmm-source\Sources\Accord.Statistics\Migrated rules for Accord.Statistics.ruleset&quot; for the &quot;Debug (Any CPU)&quot; configuration.">
+</Event><Event ErrorLevel="0" Project="Accord.Statistics" Source="Accord.Statistics\Accord.Statistics.csproj" Description="Created rule set file &quot;G:\matlabnetworkplan\accord-hmm-source\Sources\Accord.Statistics\Migrated rules for Accord.Statistics (2).ruleset&quot; for the &quot;Release (Any CPU)&quot; configuration.">
+</Event><Event ErrorLevel="0" Project="Accord.Controls.Statistics" Source="Accord.Statistics.Controls\Accord.Controls.Statistics.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>
